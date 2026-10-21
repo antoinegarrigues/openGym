@@ -1,0 +1,11 @@
+# Fork image for a small box (Synology DS223, 2 GB RAM): the frontend is built beforehand
+# (`npx vite build` in frontend/), then laid over the released web image, which already carries
+# nginx, its config template and the exercise media. Same runtime, only the app files change.
+# The build context is the built app itself (the repo's .dockerignore leaves dist/ out):
+#   docker build -f web/Dockerfile.antoine -t opengym-web-antoine frontend/dist
+ARG BASE=ghcr.io/duartesantos8/opengym-web:latest
+FROM ${BASE}
+USER root
+RUN find /usr/share/nginx/html -mindepth 1 -maxdepth 1 ! -name exercise-media -exec rm -rf {} +
+COPY . /usr/share/nginx/html/
+USER 101

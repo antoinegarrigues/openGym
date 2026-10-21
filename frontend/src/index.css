@@ -2135,3 +2135,15 @@ button.wl-summary{width:100%;padding:0 0 10px;text-align:start;border-radius:var
 [dir="rtl"] *{letter-spacing:0}
 .exfix-link{display:inline-flex;align-items:center;gap:5px;margin:14px 0 4px;color:var(--label-3);text-decoration:none}
 .list .similar-label{margin:16px 2px 6px;grid-column:1/-1}
+
+/* Running (fork) */
+.run-pace{margin:9px 2px 12px}
+.run-pace b{color:var(--label);font-weight:600}
+.run-bar{height:8px;border-radius:4px;background:var(--surface-2);overflow:hidden;margin-top:12px}
+.run-bar span{display:block;height:100%;border-radius:4px;background:var(--teal);transition:width var(--fast)}
+.run-warn{margin-top:9px;color:var(--orange)}
+.run-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.run-stats .card{padding:12px;margin:0}
+.run-stats b{display:block;margin-top:4px;font-size:17px;font-weight:600}
+.run-stats b .dim{font-size:12px;font-weight:400}
+.run-recs{display:flex;flex-direction:column;gap:10px}

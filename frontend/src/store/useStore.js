@@ -184,6 +184,10 @@ export const DEF = {
   // kind of code the gym issued. Just data, so it syncs and backs up like everything else.
   //   [{ id, label, value, fmt }]
   gymCards: [],
+  // Running (fork Antoine): one entry per run, kept apart from the lifting log because nothing
+  // about it — distance, pace, effort — reads like a set. lib/running.js holds the logic.
+  //   [{ id, d, km, sec, type, rpe?, hr?, note? }] · runGoalKm: weekly distance target
+  runs: [], runGoalKm: 20,
   // The card the check-in screen last settled on, so it reopens where you left it (handy when
   // you have more than one gym). Holds a gymCards id, or null before any card exists / is chosen;
   // a stale id (card since removed) is simply ignored by the view.
